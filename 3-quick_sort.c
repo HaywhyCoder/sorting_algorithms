@@ -24,12 +24,12 @@ int partition(int *array, size_t size, int low, int high)
 			array[pi] = array[i];
 			array[i] = temp;
 			pi++;
+			print_array(array, size);
 		}
 	}
 	temp = array[high];
 	array[high] = array[pi];
 	array[pi] = temp;
-	print_array(array, size);
 
 	return (pi);
 }

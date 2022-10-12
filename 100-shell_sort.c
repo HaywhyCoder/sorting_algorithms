@@ -1,3 +1,5 @@
+l
+lpl
 #include "sort.h"
 
 /**
@@ -27,12 +29,8 @@ void shell_sort(int *array, size_t size)
 			{
 				if (array[i + k] > array[i])
 					break;
-				else
-				{
-					temp = array[i];
-					array[i] = array[i + k];
-					array[i + k] = temp;
-				}
+				array[i] = array[i + k];
+				array[i + k] = temp;
 			}
 		}
 		k = (k - 1) / 3;
