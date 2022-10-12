@@ -7,7 +7,8 @@
  * @size: size of the array
  * @low: lower bound of the array
  * @high: upper bound of the array
- * @return: position index
+ *
+ * Return: position index
  */
 int partition(int *array, size_t size, int low, int high)
 {
@@ -62,5 +63,7 @@ void quicksort(int *array, size_t size, int low, int high)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
 	quicksort(array, size, 0, size - 1);
 }

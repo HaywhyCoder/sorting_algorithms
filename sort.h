@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 /**
  * sruct listint_s - Doubly linked list node
  *
@@ -18,6 +17,7 @@ typedef struct listint_s
 	struct listint_s *prev;
 	struct listint_s *next;
 } listint_t;
+
 
 typedef enum kind_e
 {
