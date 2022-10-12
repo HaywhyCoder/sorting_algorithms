@@ -1,8 +1,17 @@
 #include "sort.h"
 
+/**
+ * partition - finds the pivot index of an array
+ *
+ * @array: Array to be partitioned
+ * @size: size of the array
+ * @low: lower bound of the array
+ * @high: upper bound of the array
+ * @return: position index
+ */
 int partition(int *array, size_t size, int low, int high)
 {
-	int i, pi, temp, pivot;
+	int temp, i, pi, pivot;
 
 	pivot = array[high];
 	pi = low;
@@ -24,10 +33,18 @@ int partition(int *array, size_t size, int low, int high)
 	return (pi);
 }
 
+/**
+ * quicksort - sorts an array using quicksort algorithm
+ *
+ * @array: array to be sorted
+ * @size: size of the array
+ * @low: lower bound of the array
+ * @high: upper bound of the array
+ */
 void quicksort(int *array, size_t size, int low, int high)
 {
 	int pi;
-	
+
 	if (low >= high || low < 0)
 		return;
 
@@ -37,20 +54,13 @@ void quicksort(int *array, size_t size, int low, int high)
 	quicksort(array, size, pi + 1, high);
 }
 
+/**
+ * quick_sort - sorts an array using quicksort algorithm
+ *
+ * @array: array to be sorted
+ * @size: size of the array
+ */
 void quick_sort(int *array, size_t size)
 {
 	quicksort(array, size, 0, size - 1);
-}
-
-int main(void)
-{
-	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-	size_t n = sizeof(array) / sizeof(array[0]);
-
-	print_array(array, n);
-	printf("\n");
-	quick_sort(array, n);
-	printf("\n");
-	print_array(array, n);
-	return (0);
 }

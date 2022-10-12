@@ -1,8 +1,31 @@
 #include "sort.h"
 
-void print_array(const int *array, size_t size);
-void print_list(const listint_t *list);
+/**
+ * print_array - Print an array of integers
+ *
+ * @array: The array to be printed
+ * @size: Number of elements in @array
+ */
+void print_array(const int *array, size_t size)
+{
+	size_t i;
 
+	i = 0;
+	while (array && i < size)
+	{
+		if (i > 0)
+			printf(", ");
+		printf("%d", array[i]);
+		++i;
+	}
+	printf("\n");
+}
+
+/**
+ * print_list - Prints a list of integers
+ *
+ * @list: The list to be printed
+ */
 void print_list(const listint_t *list)
 {
 	int i;
@@ -15,21 +38,6 @@ void print_list(const listint_t *list)
 		printf("%d", list->n);
 		++i;
 		list = list->next;
-	}
-	printf("\n");
-}
-
-void print_array(const int *array, size_t size)
-{
-	size_t i;
-
-	i = 0;
-	while (array && i < size)
-	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", array[i]);
-		++i;
 	}
 	printf("\n");
 }
