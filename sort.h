@@ -58,7 +58,6 @@ void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 int partition(int *array, size_t size, int low, int high);
 void quicksort(int *array, size_t size, int low, int high);
-int power(int base, int exp);
 
 /*Sort Algoriths*/
 void bubble_sort(int *array, size_t size);

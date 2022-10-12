@@ -1,23 +1,6 @@
 #include "sort.h"
 
 /**
- * power - Raises the base number to power of the exponent
- *
- * @base: number to be raised
- * @exp: exponent
- * @return: Base raised to power of exponent
- */
-int power(int base, int exp)
-{
-	int i, result;
-
-	result = 1;
-	for (i = 0; i < exp; i++)
-		result *= base;
-	return (result);
-}
-
-/**
  * shell_sort - sorts an array using shell sort algorithm
  *
  * @array: Points to the array to be sorted
@@ -28,6 +11,8 @@ void shell_sort(int *array, size_t size)
 	int temp, i;
 	size_t j, k;
 
+	if (array == NULL || size < 2)
+		return;
 	k = 1;
 	while (k < size / 3)
 	{
